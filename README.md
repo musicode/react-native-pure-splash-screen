@@ -33,7 +33,7 @@ Step1
 
 add an image named `splash_screen_default` under your `res/mipmap-xx` directories.
 
-> image's extname is no matter, such as `jph`,`png`,`webp`.
+> image's extname is no matter, such as `jpg`,`png`,`webp`.
 
 Step2
 
