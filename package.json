@@ -1,0 +1,24 @@
+{
+  "name": "react-native-pure-splash-screen",
+  "version": "0.0.1",
+  "description": "react native splash screen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/musicode/react-native-pure-splash-screen.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "splash screen"
+  ],
+  "author": "musicode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/musicode/react-native-pure-splash-screen/issues"
+  },
+  "homepage": "https://github.com/musicode/react-native-pure-splash-screen#readme"
+}
