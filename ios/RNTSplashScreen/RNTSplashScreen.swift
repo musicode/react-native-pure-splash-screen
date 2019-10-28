@@ -13,7 +13,7 @@ class RNTSplashScreen : NSObject {
     static var rootView: RCTRootView? = nil
     
     // 加载默认的 Launch Image
-    @objc public static func show() {
+    @objc public static func show(rootView: RCTRootView) {
         if !hasJsLoadErrorWatcher {
             
             NotificationCenter.default.addObserver(self, selector: #selector(RNTSplashScreen.onJsLoadError), name: NSNotification.Name.RCTJavaScriptDidFailToLoad, object: nil)
@@ -21,6 +21,9 @@ class RNTSplashScreen : NSObject {
             hasJsLoadErrorWatcher = true
             
         }
+        
+        RNTSplashScreen.rootView = rootView
+        
         // 开始等待
         waiting = true
         // 线程会停在这，一直等到 js 调用 hide 才会结束此方法
@@ -31,9 +34,9 @@ class RNTSplashScreen : NSObject {
     }
     
     // 指定开屏图片
-    @objc public static func show(splashScreen: String, rootView: RCTRootView) {
+    @objc public static func show(rootView: RCTRootView, image: String) {
         
-        guard let image = UIImage(named: splashScreen) else {
+        guard let image = UIImage(named: image) else {
             return
         }
         
@@ -47,6 +50,17 @@ class RNTSplashScreen : NSObject {
         
         RNTSplashScreen.rootView = rootView
         
+    }
+    
+    @objc public static func getSafeArea() -> UIEdgeInsets {
+        if #available(iOS 11.0, *) {
+            guard let view = RNTSplashScreen.rootView else {
+                return UIEdgeInsets.zero
+            }
+            return view.safeAreaInsets
+        } else {
+            return UIEdgeInsets.zero
+        }
     }
     
     @objc public static func hide() {
@@ -64,6 +78,7 @@ class RNTSplashScreen : NSObject {
                 view.loadingView?.removeFromSuperview()
                 view.loadingView = nil
             }
+            RNTSplashScreen.rootView = nil
         }
     }
     

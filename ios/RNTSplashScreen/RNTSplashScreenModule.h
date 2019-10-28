@@ -5,9 +5,9 @@
 
 @interface RNTSplashScreenModule : NSObject <RCTBridgeModule>
 
-+ (void)show;
++ (void)show:(RCTRootView *)rootView;
 
-+ (void)show:(NSString *)splashScreen inRootView:(RCTRootView *)rootView;
++ (void)show:(RCTRootView *)rootView image:(NSString *)image;
 
 + (void)hide;
 

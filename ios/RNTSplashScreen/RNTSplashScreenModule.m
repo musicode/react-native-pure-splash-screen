@@ -6,12 +6,12 @@
 
 RCT_EXPORT_MODULE(RNTSplashScreen);
 
-+ (void)show {
-    [RNTSplashScreen show];
++ (void)show:(RCTRootView *)rootView {
+    [RNTSplashScreen showWithRootView:rootView];
 }
 
-+ (void)show:(NSString *)splashScreen inRootView:(RCTRootView *)rootView {
-    [RNTSplashScreen showWithSplashScreen:splashScreen rootView:rootView];
++ (void)show:(RCTRootView *)rootView image:(NSString *)image {
+    [RNTSplashScreen showWithRootView:rootView image:image];
 }
 
 + (void)hide {
@@ -20,6 +20,16 @@ RCT_EXPORT_MODULE(RNTSplashScreen);
 
 RCT_EXPORT_METHOD(hide) {
     [RNTSplashScreenModule hide];
+}
+
+RCT_EXPORT_METHOD(getSafeArea:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
+    UIEdgeInsets inset = [RNTSplashScreen getSafeArea];
+    resolve(@{
+        @"top": @(inset.top),
+        @"bottom": @(inset.bottom),
+        @"left": @(inset.left),
+        @"right": @(inset.right)
+    });
 }
 
 @end

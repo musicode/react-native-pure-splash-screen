@@ -22,7 +22,7 @@ Modify `AppDelegate.m`
 {
   ...
   // add this line
-  [RNTSplashScreenModule show];
+  [RNTSplashScreenModule show:rootView];
   return YES;
 }
 ```

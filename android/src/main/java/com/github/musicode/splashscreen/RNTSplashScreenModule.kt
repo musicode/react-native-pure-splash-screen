@@ -2,10 +2,10 @@ package com.github.musicode.splashscreen
 
 import android.app.Activity
 import android.app.Dialog
-import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactContextBaseJavaModule
-import com.facebook.react.bridge.ReactMethod
 import java.lang.ref.WeakReference
+import android.os.Build
+import com.facebook.react.bridge.*
+
 
 class RNTSplashScreenModule(private val reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
@@ -28,9 +28,40 @@ class RNTSplashScreenModule(private val reactContext: ReactApplicationContext) :
                 if (it.isShowing) {
                     it.dismiss()
                 }
+                // getSafeArea 应先于 hide 调用
                 activity = null
                 dialog = null
             }
+        }
+
+    }
+
+    @ReactMethod
+    fun getSafeArea(promise: Promise) {
+
+        val map = Arguments.createMap()
+        map.putInt("top", 0)
+        map.putInt("bottom", 0)
+        map.putInt("left", 0)
+        map.putInt("right", 0)
+
+        val currentActivity = activity?.get()
+        if (currentActivity == null) {
+            promise.resolve(map)
+            return
+        }
+
+        currentActivity.runOnUiThread {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                val displayCutout = currentActivity.window.decorView.rootWindowInsets?.displayCutout
+                if (displayCutout != null) {
+                    map.putInt("top", displayCutout.safeInsetTop)
+                    map.putInt("bottom", displayCutout.safeInsetBottom)
+                    map.putInt("left", displayCutout.safeInsetLeft)
+                    map.putInt("right", displayCutout.safeInsetRight)
+                }
+            }
+            promise.resolve(map)
         }
 
     }
