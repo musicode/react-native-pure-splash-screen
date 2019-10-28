@@ -28,7 +28,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-  [RNTSplashScreenModule show:@"splash" inRootView:rootView];
+  [RNTSplashScreenModule show:rootView image:@"splash"];
   return YES;
 }
 

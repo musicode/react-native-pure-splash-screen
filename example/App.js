@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Alert} from 'react-native';
 
 import SplashScreen from 'react-native-pure-splash-screen'
 
@@ -20,12 +20,23 @@ const instructions = Platform.select({
 
 console.log(SplashScreen)
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
 
   componentDidMount() {
     console.log('mouned')
     SplashScreen.hide()
+    SplashScreen.getSafeArea().then(data => {
+
+      Alert.alert(
+        'Alert Title',
+        JSON.stringify(data),
+        [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
+        ],
+        { cancelable: false }
+      )
+
+    })
   }
 
   render() {
