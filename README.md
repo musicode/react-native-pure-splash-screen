@@ -31,9 +31,7 @@ Modify `AppDelegate.m`
 
 Step1
 
-add an image named `splash_screen_default` under your `res/mipmap-xx` directories.
-
-> image's extname is no matter, such as `jpg`,`png`,`webp`.
+add a layout file named `splash_screen_default.xml` under your `res/layout` directories.
 
 Step2
 
