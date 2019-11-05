@@ -10,7 +10,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import <RNTSplashScreen/RNTSplashScreenModule.h>
+#import <RNTSplashScreenModule.h>
 
 @implementation AppDelegate
 
@@ -28,7 +28,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-  [RNTSplashScreenModule show:rootView image:@"splash"];
+  [RNTSplashScreenModule show:rootView];
   return YES;
 }
 

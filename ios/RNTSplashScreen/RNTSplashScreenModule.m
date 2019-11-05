@@ -1,6 +1,6 @@
 
 #import "RNTSplashScreenModule.h"
-#import "RNTSplashScreen-Swift.h"
+#import "react_native_pure_splash_screen-Swift.h"
 
 @implementation RNTSplashScreenModule
 

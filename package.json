@@ -1,6 +1,6 @@
 {
   "name": "react-native-pure-splash-screen",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "react native splash screen",
   "main": "index.js",
   "scripts": {

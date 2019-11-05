@@ -6,6 +6,7 @@ This is a module which help you display a splash screen to avoid blank screen.
 
 ```
 npm i react-native-pure-splash-screen
+// link below 0.60
 react-native link react-native-pure-splash-screen
 ```
 
@@ -16,7 +17,7 @@ react-native link react-native-pure-splash-screen
 Modify `AppDelegate.m`
 
 ```oc
-#import <RNTSplashScreen/RNTSplashScreenModule.h>
+#import <RNTSplashScreenModule.h>
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
