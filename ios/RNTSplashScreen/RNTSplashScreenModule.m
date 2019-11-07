@@ -22,14 +22,4 @@ RCT_EXPORT_METHOD(hide) {
     [RNTSplashScreenModule hide];
 }
 
-RCT_EXPORT_METHOD(getSafeArea:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
-    UIEdgeInsets inset = [RNTSplashScreen getSafeArea];
-    resolve(@{
-        @"top": @(inset.top),
-        @"bottom": @(inset.bottom),
-        @"left": @(inset.left),
-        @"right": @(inset.right)
-    });
-}
-
 @end

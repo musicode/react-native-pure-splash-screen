@@ -7,10 +7,6 @@ export default {
 
   hide() {
     RNTSplashScreen.hide()
-  },
-
-  getSafeArea() {
-    return RNTSplashScreen.getSafeArea()
   }
 
 }

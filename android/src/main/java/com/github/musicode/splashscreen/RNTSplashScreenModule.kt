@@ -28,44 +28,12 @@ class RNTSplashScreenModule(private val reactContext: ReactApplicationContext) :
                 if (it.isShowing) {
                     it.dismiss()
                 }
-                // getSafeArea 应先于 hide 调用
                 activity = null
                 dialog = null
             }
         }
 
     }
-
-    @ReactMethod
-    fun getSafeArea(promise: Promise) {
-
-        val map = Arguments.createMap()
-        map.putInt("top", 0)
-        map.putInt("bottom", 0)
-        map.putInt("left", 0)
-        map.putInt("right", 0)
-
-        val currentActivity = activity?.get()
-        if (currentActivity == null) {
-            promise.resolve(map)
-            return
-        }
-
-        currentActivity.runOnUiThread {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                val displayCutout = currentActivity.window.decorView.rootWindowInsets?.displayCutout
-                if (displayCutout != null) {
-                    map.putInt("top", displayCutout.safeInsetTop)
-                    map.putInt("bottom", displayCutout.safeInsetBottom)
-                    map.putInt("left", displayCutout.safeInsetLeft)
-                    map.putInt("right", displayCutout.safeInsetRight)
-                }
-            }
-            promise.resolve(map)
-        }
-
-    }
-
 
     companion object {
 

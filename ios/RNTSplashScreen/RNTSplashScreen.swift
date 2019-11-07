@@ -52,17 +52,6 @@ public class RNTSplashScreen : NSObject {
 
     }
 
-    @objc public static func getSafeArea() -> UIEdgeInsets {
-        if #available(iOS 11.0, *) {
-            guard let view = RNTSplashScreen.rootView else {
-                return UIEdgeInsets.zero
-            }
-            return view.safeAreaInsets
-        } else {
-            return UIEdgeInsets.zero
-        }
-    }
-
     @objc public static func hide() {
         DispatchQueue.main.async {
             // 默认图
