@@ -29,7 +29,6 @@
 		9D8FEA8322BCEEE300CE0CE0 /* libRNTSplashScreen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNTSplashScreen.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D8FEA8622BCEEE300CE0CE0 /* RNTSplashScreenModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNTSplashScreenModule.h; sourceTree = "<group>"; };
 		9D8FEA8722BCEEE300CE0CE0 /* RNTSplashScreenModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNTSplashScreenModule.m; sourceTree = "<group>"; };
-		9D8FEAD122BCF41100CE0CE0 /* RNTSplashScreen-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNTSplashScreen-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D8FEAD222BCF41200CE0CE0 /* RNTSplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNTSplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +65,6 @@
 				9D8FEA8622BCEEE300CE0CE0 /* RNTSplashScreenModule.h */,
 				9D8FEA8722BCEEE300CE0CE0 /* RNTSplashScreenModule.m */,
 				9D8FEAD222BCF41200CE0CE0 /* RNTSplashScreen.swift */,
-				9D8FEAD122BCF41100CE0CE0 /* RNTSplashScreen-Bridging-Header.h */,
 			);
 			path = RNTSplashScreen;
 			sourceTree = "<group>";

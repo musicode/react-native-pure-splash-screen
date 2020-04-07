@@ -3,9 +3,7 @@ package com.github.musicode.splashscreen
 import android.app.Activity
 import android.app.Dialog
 import java.lang.ref.WeakReference
-import android.os.Build
 import com.facebook.react.bridge.*
-
 
 class RNTSplashScreenModule(private val reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
