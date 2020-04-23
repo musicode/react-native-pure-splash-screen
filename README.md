@@ -1,5 +1,7 @@
 # react-native-pure-splash-screen
 
+> This repo is deprecated, please visit the new [splash-screen](https://github.com/react-native-hero/splash-screen) repo.
+
 This is a module which help you display a splash screen to avoid blank screen.
 
 ## Installation
